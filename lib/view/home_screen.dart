@@ -32,11 +32,10 @@ class _HomeScreenState extends State<HomeScreen>
   Color textColor = Colors.grey[900];
   Color iconColor = Colors.deepPurpleAccent;
   Color backgroundColor = Colors.white;
-
-  int _page = 0;
-
+  
   //check page is diplay
   int checkIndex = 1;
+  int selectedButtonIndex=1;
   String name = 'Android';
 
   double xOffset = 0;
@@ -239,14 +238,15 @@ class _HomeScreenState extends State<HomeScreen>
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        checkIndex = index + 1;
+                        checkIndex = index+1;
+                        selectedButtonIndex=checkIndex;
                       });
                     },
                     child: Container(
                       width: 90,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: backgroundColor,
+                        color: selectedButtonIndex==index+1?deepPurple:backgroundColor,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -254,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen>
                         children: [
                           Icon(
                             categories[index]['icon'],
-                            color: iconColor,
+                            color: selectedButtonIndex==index+1?Colors.white:deepPurple,
                             size: index==0?30:35,
                           ),
                           Padding(
@@ -262,7 +262,7 @@ class _HomeScreenState extends State<HomeScreen>
                             child: Text(
                               categories[index]['name'],
                               style: TextStyle(
-                                color: textColor,
+                                color: selectedButtonIndex==index+1?Colors.white:textColor,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 15,
                               ),

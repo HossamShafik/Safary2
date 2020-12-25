@@ -93,7 +93,7 @@ class _HotelsServiceState extends State<HotelsService> {
           itemCount: 15,
           itemBuilder: (context,index){
             return Padding(
-              padding: const EdgeInsets.only(top: 15),
+              padding: const EdgeInsets.only(bottom: 10,top: 5),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 100,
