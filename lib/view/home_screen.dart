@@ -1,11 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project/Controllers/firestore/DataBase.dart';
 import 'package:project/view/hotel_stream_screen.dart';
 import 'package:project/view/profile_screen.dart';
-import 'package:project/view/search_screen.dart';
+import 'package:project/view/services_screens/services_screen.dart';
 import 'package:project/view/tour_stream_screen.dart';
 import 'car_stream_screen.dart';
 import 'chatList_screen.dart';
@@ -191,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen>
           InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return SearchScreen();
+                return ServicesScreen();
               }));
             },
             child: Container(
